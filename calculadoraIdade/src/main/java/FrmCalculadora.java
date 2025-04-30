@@ -25,17 +25,20 @@ public class FrmCalculadora extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jSpinner1 = new javax.swing.JSpinner();
+        lblAnoNascimento = new javax.swing.JLabel();
+        spnAnoNascimento = new javax.swing.JSpinner();
         jButton1 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        lblIconeBoneco = new javax.swing.JLabel();
+        lblIdade = new javax.swing.JLabel();
+        lblResultadoIdade = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Ano de nascimento");
+        lblAnoNascimento.setText("Ano de nascimento");
 
-        jSpinner1.setModel(new javax.swing.SpinnerNumberModel(1900, 1900, 2025, 1));
+        spnAnoNascimento.setModel(new javax.swing.SpinnerNumberModel(1900, 1900, 2025, 1));
 
+        jButton1.setIcon(new javax.swing.ImageIcon("I:\\Meu Drive\\NetBeans_Jefferson\\calculadoraIdade\\calculator_3534.png")); // NOI18N
         jButton1.setText("Calcular");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -43,41 +46,68 @@ public class FrmCalculadora extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("jLabel2");
+        lblIconeBoneco.setIcon(new javax.swing.ImageIcon("I:\\Meu Drive\\NetBeans_Jefferson\\calculadoraIdade\\child_person_people_guy_1721 (2).png")); // NOI18N
+
+        lblIdade.setText("Idade");
+
+        lblResultadoIdade.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        lblResultadoIdade.setForeground(new java.awt.Color(204, 0, 0));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1))
-                .addGap(18, 18, 18)
-                .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(88, 88, 88)
-                .addComponent(jLabel2)
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblIdade)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblResultadoIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblAnoNascimento))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(spnAnoNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblIconeBoneco)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(77, 77, 77)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(37, 37, 37)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(59, 59, 59)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblAnoNascimento)
+                            .addComponent(spnAnoNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(31, 31, 31)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(lblIconeBoneco)))
+                .addGap(10, 10, 10)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblIdade)
+                    .addComponent(lblResultadoIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+
+        // Realizando a conversão do valor capturado no spiner
+        int anoNasc = (Integer) spnAnoNascimento.getValue();
+        //Não entendi ao certo como funciona, mas pega a data do sistema 
+        int anoAtual = java.util.Calendar.getInstance().get(java.util.Calendar.YEAR);
+        int idade = anoAtual - anoNasc;
+        
+        //Exibição do resultado no lbl escolhido, não soube fazer a conversão, então concatenei com um vazio
+        lblResultadoIdade.setText(""+idade);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -117,8 +147,10 @@ public class FrmCalculadora extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JSpinner jSpinner1;
+    private javax.swing.JLabel lblAnoNascimento;
+    private javax.swing.JLabel lblIconeBoneco;
+    private javax.swing.JLabel lblIdade;
+    private javax.swing.JLabel lblResultadoIdade;
+    private javax.swing.JSpinner spnAnoNascimento;
     // End of variables declaration//GEN-END:variables
 }
