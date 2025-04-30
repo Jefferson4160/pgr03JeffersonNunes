@@ -1,3 +1,5 @@
+package br.com.ifba.atividade03.view;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -38,7 +40,7 @@ public class FrmCalculadora extends javax.swing.JFrame {
 
         spnAnoNascimento.setModel(new javax.swing.SpinnerNumberModel(1900, 1900, 2025, 1));
 
-        jButton1.setIcon(new javax.swing.ImageIcon("I:\\Meu Drive\\NetBeans_Jefferson\\calculadoraIdade\\calculator_3534.png")); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ifba/atividade03/imagens/calculator_3534.png"))); // NOI18N
         jButton1.setText("Calcular");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -46,7 +48,7 @@ public class FrmCalculadora extends javax.swing.JFrame {
             }
         });
 
-        lblIconeBoneco.setIcon(new javax.swing.ImageIcon("I:\\Meu Drive\\NetBeans_Jefferson\\calculadoraIdade\\child_person_people_guy_1721 (2).png")); // NOI18N
+        lblIconeBoneco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ifba/atividade03/imagens/child_person_people_guy_1721 (2).png"))); // NOI18N
 
         lblIdade.setText("Idade");
 
@@ -135,6 +137,7 @@ public class FrmCalculadora extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(FrmCalculadora.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

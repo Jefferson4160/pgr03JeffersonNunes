@@ -90,7 +90,7 @@
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="I:\Meu Drive\NetBeans_Jefferson\calculadoraIdade\calculator_3534.png"/>
+          <Image iconType="3" name="/br/com/ifba/atividade03/imagens/calculator_3534.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Calcular"/>
       </Properties>
@@ -101,7 +101,7 @@
     <Component class="javax.swing.JLabel" name="lblIconeBoneco">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="I:\Meu Drive\NetBeans_Jefferson\calculadoraIdade\child_person_people_guy_1721 (2).png"/>
+          <Image iconType="3" name="/br/com/ifba/atividade03/imagens/child_person_people_guy_1721 (2).png"/>
         </Property>
       </Properties>
     </Component>
