@@ -1,0 +1,17 @@
+# Arquivos de configuração do editor
+.vscode/
+nbproject/
+.idea/
+
+# Arquivos específicos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos de configuração local (por exemplo, banco de dados, variáveis de ambiente)
+.env
+
+# Arquivos de log
+*.log
+
+# Pasta de build
+/build/
