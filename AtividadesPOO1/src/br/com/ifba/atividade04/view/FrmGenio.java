@@ -33,17 +33,14 @@ public class FrmGenio extends javax.swing.JFrame {
         lblResultado = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setTitle("Adivinhação do Genio");
 
         lblGenio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ifba/atividade04/imagens/Fetchpik.com-qda5j-removebg-preview-50.png"))); // NOI18N
-        getContentPane().add(lblGenio, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, -1, -1));
 
         lblValor.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblValor.setText("VALOR");
-        getContentPane().add(lblValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
 
         spnValor.setModel(new javax.swing.SpinnerNumberModel(1, 1, 5, 1));
-        getContentPane().add(spnValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 70, 30));
 
         btnPalpite.setText("Palpite");
         btnPalpite.addActionListener(new java.awt.event.ActionListener() {
@@ -51,14 +48,55 @@ public class FrmGenio extends javax.swing.JFrame {
                 btnPalpiteActionPerformed(evt);
             }
         });
-        getContentPane().add(btnPalpite, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 80, 30));
 
         lblResultado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblResultado.setForeground(new java.awt.Color(0, 0, 0));
         lblResultado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblResultado.setText("<html><center'>Vou pensar em um valor entre<b>1 e 5.</b><br>Tente acertar!</center></html>");
         lblResultado.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        getContentPane().add(lblResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, 150, 60));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblValor)
+                        .addGap(4, 4, 4)
+                        .addComponent(spnValor, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(btnPalpite, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(70, 70, 70)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblGenio)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(lblResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(49, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(170, 170, 170)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblValor)
+                            .addComponent(spnValor, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(20, 20, 20)
+                        .addComponent(btnPalpite, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblGenio)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(40, 40, 40)
+                                .addComponent(lblResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(39, Short.MAX_VALUE))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
