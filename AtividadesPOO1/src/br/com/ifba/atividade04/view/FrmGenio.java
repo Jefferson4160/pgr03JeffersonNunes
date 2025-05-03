@@ -4,17 +4,19 @@
  */
 package br.com.ifba.atividade04.view;
 import java.lang.Math;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ADMIN
  */
 public class FrmGenio extends javax.swing.JFrame {
-
+    int cont=0;
     /**
      * Creates new form FrmGenio
      */
     public FrmGenio() {
-        initComponents();
+        initComponents();  
     }
 
     /**
@@ -31,6 +33,7 @@ public class FrmGenio extends javax.swing.JFrame {
         spnValor = new javax.swing.JSpinner();
         btnPalpite = new javax.swing.JButton();
         lblResultado = new javax.swing.JLabel();
+        btnReset = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Adivinhação do Genio");
@@ -55,26 +58,38 @@ public class FrmGenio extends javax.swing.JFrame {
         lblResultado.setText("<html><center'>Vou pensar em um valor entre<b>1 e 5.</b><br>Tente acertar!</center></html>");
         lblResultado.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
+        btnReset.setBackground(new java.awt.Color(255, 102, 102));
+        btnReset.setForeground(new java.awt.Color(0, 0, 0));
+        btnReset.setText("Reset");
+        btnReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResetActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblValor)
-                        .addGap(4, 4, 4)
-                        .addComponent(spnValor, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(btnPalpite, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(70, 70, 70)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblGenio)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(lblResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblValor)
+                                .addGap(4, 4, 4)
+                                .addComponent(spnValor, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(30, 30, 30)
+                                .addComponent(btnPalpite, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(70, 70, 70)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblGenio)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(lblResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(49, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -95,7 +110,9 @@ public class FrmGenio extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(40, 40, 40)
                                 .addComponent(lblResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnReset)
+                .addContainerGap(10, Short.MAX_VALUE))
         );
 
         pack();
@@ -117,6 +134,25 @@ public class FrmGenio extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_btnPalpiteActionPerformed
+
+    private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
+        // TODO add your handling code here:
+        
+        if (!lblResultado.getText().equals("<html><center'>Vou pensar em um valor entre<b>1 e 5.</b><br>Tente acertar!</center></html>")){
+            JOptionPane.showMessageDialog(this, "Sistema reiniciado!");
+            lblResultado.setText("<html><center'>Vou pensar em um valor entre<b>1 e 5.</b><br>Tente acertar!</center></html>");
+            cont = 0;
+        }else{
+            if(cont<2){
+                JOptionPane.showMessageDialog(this, "Não há nada para ser resetado");
+                cont++;
+            }else{
+                JOptionPane.showMessageDialog(this, "Já falei que não tem nada pra ser resetado!", "Chato", JOptionPane.WARNING_MESSAGE);
+            }
+        }
+        
+        
+    }//GEN-LAST:event_btnResetActionPerformed
 
     /**
      * @param args the command line arguments
@@ -155,6 +191,7 @@ public class FrmGenio extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnPalpite;
+    private javax.swing.JButton btnReset;
     private javax.swing.JLabel lblGenio;
     private javax.swing.JLabel lblResultado;
     private javax.swing.JLabel lblValor;
